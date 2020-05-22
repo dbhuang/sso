@@ -1,0 +1,23 @@
+{
+    "name": "dbhuang/sso",
+    "description": "多个后台整合成SSO登录（如有权限分配需在SSO后台集中整合）",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dbhuang",
+            "email": "1016516927@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "dbhuang\\sso\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "require": {
+        "guzzlehttp/guzzle": "6.5.3",
+        "predis/predis": "^1.1"
+    }
+}
