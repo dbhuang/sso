@@ -9,7 +9,6 @@ namespace dbhuang\sso;
 
 
 use dbhuang\sso\exceptions\TicketException;
-use Firebase\JWT\JWT;
 use Predis\Client;
 
 class Service

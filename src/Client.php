@@ -48,7 +48,7 @@ class Client
 
                 //响应结果
                 if($result['code']==0){
-                    return $result;
+                    return $result['data'];
                 }else{
                     throw new TicketException($result['msg'],$result['data']);
                 }
