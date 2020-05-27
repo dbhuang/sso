@@ -19,10 +19,14 @@ if($_GET['ticket']){    //有ticket
         $ssoUrl = 'http://sso.host.com/ticket.php';
         $ssoClient = new \dbhuang\sso\Client();
         $result = $ssoClient->ticketToService($ssoUrl);
-        //登录成功,存储用户登录状态
-        echo '登录成功';
-        $_SESSION['APP_USER'] = $result;
-        header('Location:/');
+        if($result['code']==0){
+            //登录成功,存储用户登录状态
+            echo '登录成功';
+            $_SESSION['APP_USER'] = $result;
+            header('Location:/');
+        }else{
+            echo $result['code'].$result['msg'];exit();
+        }
     }catch (Exception $e){
         //登录失败,对应跳转
         echo $e->getCode().$e->getMessage();exit();

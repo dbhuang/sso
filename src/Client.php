@@ -47,11 +47,12 @@ class Client
                 }
 
                 //响应结果
-                if($result['code']==0){
-                    return $result['data'];
-                }else{
-                    throw new TicketException($result['msg'].':'.serialize($result['data']),$result['code']);
-                }
+                return $result;
+//                if($result['code']==0){
+//                    return $result['data'];
+//                }else{
+//                    throw new TicketException($result['msg'].':'.serialize($result['data']),$result['code']);
+//                }
             }else{
                 throw new TicketException('请求失败，返回状态码 :'.$code,100001);
             }
