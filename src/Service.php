@@ -84,7 +84,7 @@ class Service
      */
     public function collectClient($clients,$client){
         $clientHost = url_host($client);
-        if(!in_array($clients,$clientHost)){
+        if(!in_array($clientHost,$clients)){
             $clients[] = $clientHost;
         }
         return $clients;
